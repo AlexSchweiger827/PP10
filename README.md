@@ -133,7 +133,22 @@ The linker can not find the right library (libm).
 #### Reflection Questions
 
 1. **What are the advantages and drawbacks of a header-only library?**
+   
+**advantages:**
+
+headerfiles only need to be inlcuded in the main programm and does not need a seperate compiling.
+The linker does not need specific flags like "-lm" for compiling the program.
+The compiler has full access to the source code of the library. Therefore it can better optimize the code through inlining of functions.
+Header-only libraries are easier to use for different platforms and compilers. Because they do not rely on precompiled binaries.
+
+**disavdvantage:**
+The compilation time is increased, because with every inclusion of the header only library, the compiler has to re-compile the code in that header.
+Parsing and holding the code of the libray can lead to an increased memory usage during compilation.
+The compiler may generate multiple call sites of the same function or class, which leads to an increased binary size.
+If the implementation of the library changes, all code that is dependent of the library needs to be recompiled.
+
 2. **How does `static inline` affect linkage and code size?**
+
 
 ---
 
