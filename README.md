@@ -56,7 +56,20 @@ In this exercise you will:
 #### Reflection Questions
 
 1. **What does `typedef struct { ... } Point;` achieve compared to `struct Point { ... };`?**
+
+   typedef struct { ... } Point declares a structure without a tag name.
+   "typedef" creates an alias for this structure. In this case it is "Point".
+   By inlcuding the structure in a program, you can declare variables of this structure type
+   (e.g. "Point p={3.0 , 4.0};"). 
+   
+   
 2. **How does the compiler lay out a `Point` in memory?**
+
+The content of the structure is ordered sequentially. 
+First comes double x then double y.
+The data type double takes 8 byte of the memory.
+That means the variable x needs the adress 0 to 7 in the memory.
+The variable y takes the adress 8 to 15.
 
 ---
 
