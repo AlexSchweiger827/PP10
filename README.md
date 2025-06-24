@@ -87,7 +87,22 @@ The variable y takes the adress 8 to 15.
 #### Reflection Questions
 
 1. **Why is the `-lm` flag necessary to resolve `sqrt`?**
+   
+"-lm" instructs the linker to link against the math library. 
+"sqrt" is a function stored in the math library (libm).
+
+  
 2. **What happens if you omit `-lm` when calling math functions?**
+
+By not using the -lm flag in the compiling the linker would show an error like:
+
+```
+/usr/bin/ld: /tmp/ccXal4Vi.o: in function `main':
+point_main.c:(.text+0x51): undefined reference to `sqrt'
+collect2: error: ld returned 1 exit status
+
+```
+The linker can not find the right library (libm).
 
 ---
 
