@@ -150,6 +150,18 @@ If the implementation of the library changes, all code that is dependent of the 
 2. **How does `static inline` affect linkage and code size?**
 
 
+"static" gives the function an internel linkage. The functions name is only visible  within the current translation unit.
+It prevents an overlap of the names if another file defines a function with the same name.
+
+"inline" hints the compiler to consider replacing the function call with the content of the function at the point where the function is called. The compiler is free to ignore this. 
+
+static inline will give the function external linkage. 
+As result every file that includes the function will get its own seperate copy of the function.
+Because of the individually copies of the function for every file, there will be no name conflicts, which allows a function definition in multiple files.
+By small and frequently called functions can lead to smaller code size. 
+If the function is large and the compiler chooses not to inline it, each translation unit will contain its own copy of the functions machine code.
+This can lead to unenecessarily large and resource intensive code.
+
 ---
 
 ### Task 3: Precompiled Static Library
