@@ -184,7 +184,16 @@ This can lead to unenecessarily large and resource intensive code.
 #### Reflection Questions
 
 1. **Why must you include `solutions/util.o` when linking instead of just the header?**
+The header only tells the compiler how to call the function.
+It does not provide the content of the function.
+The linker needs the machine code of the function, which is in the object file util.o for a executable.
+
+   
 2. **What symbol resolution occurs at compile vs. link time?**
+At compile the compiler generates from a source file a object files with the information or declaration of the symbol.
+
+At link time the linker combines one or more object files into a executable program.
+The linker finds the definitions for the undetermined external symbols. 
 
 ---
 
@@ -215,8 +224,23 @@ This can lead to unenecessarily large and resource intensive code.
 #### Reflection Questions
 
 1. **How does `ar` create an archive, and how does the linker find `-lutil`?**
-2. **What is the purpose of `ldconfig`?**
+"ar" is a command that is used for creating static libraries.
+The syntax is: ar [Options] archive_name member_files
+The "options" flag tells the command "ar" what actions should be executed.
 
+for example:  ar rcs libutil.a solutions/util.o. 
+The Option "rcs" says to replace or add util.o into the archive libutil.a ("r").
+"c" tells "ar" to create an archive libutil.a if it does not exist.
+The last option "s" tells ar to create a list with al symbols (functions, global variables) in the archive.
+
+In the archive is a global header (!<arch>) to identify the files as an archive.
+For each file to the archive, ar creates a file header, which contains metadata the name of the file, its size in bytes etc.
+
+
+2. **What is the purpose of `ldconfig`?**
+"ldconfig" creates links and cache to the most recent shared libraries.
+It checks the header and the libraries and decides which versions should have their links updated.
+In short the purpose of "ldconfig" is to creat, update and to manage the information for shared libraries.
 ---
 
 ### Task 5: Installing and Using `jansson`
