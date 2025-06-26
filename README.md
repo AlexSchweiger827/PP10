@@ -375,5 +375,6 @@ In short the purpose of "ldconfig" is to creat, update and to manage the informa
 2. **How can you inspect a library’s exported symbols to verify installation?**
 
 ---
-I finsihed task 0-4 and only finished the program for task 5. It took me 98minutes.
 **Remember:** Stop after **90 minutes** and record where you stopped.
+
+I finsihed task 0-4 and only finished the program for task 5. It took me 98 minutes.
