@@ -52,6 +52,15 @@ In this exercise you will:
    } Point;
    ```
 2. Create `solutions/point_main.c` that includes `point.h`, declares a `Point p = {3.0, 4.0}`, and prints its distance from origin using `sqrt(p.x*p.x + p.y*p.y)` (linking `-lm`).
+   **
+   
+**Link for point.h**
+
+[point.h ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/point.h)
+
+**Link for main.c**
+[point_main.c ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/point_main.c) 
+
 
 #### Reflection Questions
 
@@ -83,6 +92,10 @@ The variable y takes the adress 8 to 15.
    gcc -o solutions/point_main solutions/point_main.c -lm
    ```
 2. Run `./solutions/point_main` and verify it prints `5.0`.
+   
+   **point_main.c compiled and point_main test run**
+   
+![point_main.c compiled](https://github.com/AlexSchweiger827/PP10/blob/master/PP10%20screenshots/Task%200%20compiled.PNG?raw=true) 
 
 #### Reflection Questions
 
@@ -129,6 +142,17 @@ The linker can not find the right library (libm).
    gcc -o solutions/util_main solutions/util_main.c
    ./solutions/util_main
    ```
+**Link for libutil.h**
+
+[libutil.h](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/libutil.h) 
+
+**Link for main.c**
+
+[util_main.c ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/util_main.c) 
+   
+**util_main.c compiled and util_main test run**
+
+![util_main.c compiled](https://github.com/AlexSchweiger827/PP10/blob/master/PP10%20screenshots/Task%202.PNG) 
 
 #### Reflection Questions
 
@@ -181,6 +205,26 @@ This can lead to unenecessarily large and resource intensive code.
    ```
 4. Run `./solutions/util_main_pc` to verify output.
 
+**Link for util.c**
+
+[util.c ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/util.c) 
+
+**Link for util.h**
+
+[util.h ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/util.h) 
+
+**Link for util.o (util.o is not readable in Github)** 
+
+[util.o ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/util.o) 
+
+**Link for util_main.c**
+
+[util_main.c ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/util_main.c) 
+
+**util_main.c compiled and util_main_pc test run**
+
+![util_main.c compiled](https://github.com/AlexSchweiger827/PP10/blob/master/PP10%20screenshots/Task%203.PNG) 
+
 #### Reflection Questions
 
 1. **Why must you include `solutions/util.o` when linking instead of just the header?**
@@ -220,6 +264,17 @@ The linker finds the definitions for the undetermined external symbols.
    ```
 
    (assumes `#include <libutil.h>`)
+
+
+**Link for libutil.a (libutil.a is not readable in Github)**
+
+[libutil.a ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/libutil.a) 
+   
+**Link for libutil.h**
+
+[libutil.h ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/libutil.h) 
+
+
 
 #### Reflection Questions
 
@@ -273,6 +328,14 @@ In short the purpose of "ldconfig" is to creat, update and to manage the informa
    ./solutions/json_main
    ```
 
+**Link for json_main.c**
+
+[json_main.c ](https://github.com/AlexSchweiger827/PP10/blob/master/PP10/solutions/json_main.c) 
+   
+**json_main.c compiled and json_main test run**
+
+![json_main.c compiled](https://github.com/AlexSchweiger827/PP10/blob/master/PP10%20screenshots/Task%204.PNG) 
+
 #### Reflection Questions
 
 1. **What files does `libjansson-dev` install, and where?**
@@ -312,5 +375,5 @@ In short the purpose of "ldconfig" is to creat, update and to manage the informa
 2. **How can you inspect a library’s exported symbols to verify installation?**
 
 ---
-
+I finsihed task 0-4 and only finished the program for task 5. It took me 98minutes.
 **Remember:** Stop after **90 minutes** and record where you stopped.
